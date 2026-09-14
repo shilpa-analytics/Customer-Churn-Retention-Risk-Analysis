@@ -24,7 +24,13 @@ The analysis was designed to answer:
 - Which high-value customers should be prioritized for retention?
 
 ---
+## 📁 Project Files
 
+- 📊 **[Dashboard Screenshot](customer-churn-dashboard.png)** — Preview of the completed interactive dashboard
+- 📗 **[Excel Dashboard Workbook](Customer_Churn_Retention_Risk_Analysis.xlsm)** — Complete Excel dashboard with Power Query, Power Pivot, PivotTables, PivotCharts, slicers, and VBA reset functionality
+- 🗄️ **[SQL Analysis Scripts](02_SQL%20Scripts/)** — SQL Server scripts covering database creation, data preparation, validation, churn analysis, segmentation, advanced analysis, and view creation
+
+---
 ## 🛠️ Tools & Technologies
 
 - SQL Server
