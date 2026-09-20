@@ -1,165 +1,169 @@
-# Customer Churn & Retention Risk Analysis
+# Customer Churn & Retention Risk Analysis Dashboard
 
 ## 📊 Project Overview
 
-This project analyzes customer churn, retention risk, and revenue impact using **SQL Server and Microsoft Excel**.
+I built this project to analyze customer churn and understand which customers may be at higher risk of leaving.
 
-The goal was to transform raw customer data into an interactive analytical solution that identifies key churn drivers, high-risk customer segments, and potential revenue at risk.
+I used **SQL Server** for the data analysis and **Microsoft Excel** to build the data model and interactive dashboard. My goal was to take the customer data from the database and turn it into something that could be used to understand churn patterns and potential revenue impact.
 
 **Workflow:** SQL Server → SQL Analysis → Power Query → Power Pivot → Excel Dashboard → Business Insights
 
 ---
 
-## 🎯 Business Objective
+## 🎯 Business Questions
 
-The analysis was designed to answer:
+I wanted to use the data to answer questions such as:
 
-- How many customers have churned?
-- What is the overall churn rate?
-- Which contract types have the highest churn?
-- Which internet service and payment methods are associated with higher churn?
-- How does customer tenure relate to churn?
-- Which customers have elevated retention risk?
-- How much revenue has been lost due to churn?
-- Which high-value customers should be prioritized for retention?
-
----
-## 📁 Project Files
-
-- 📊 **[Dashboard Screenshot](customer-churn-dashboard.png)** — Preview of the completed interactive dashboard
-- 📗 **[Excel Dashboard Workbook](Customer_Churn_Retention_Risk_Analysis.xlsm)** — Complete Excel dashboard with Power Query, Power Pivot, PivotTables, PivotCharts, slicers, and VBA reset functionality
-- 🗄️ **[SQL Analysis Scripts](02_SQL%20Scripts/)** — SQL Server scripts covering database creation, data preparation, validation, churn analysis, segmentation, advanced analysis, and view creation
-
----
-## 🛠️ Tools & Technologies
-
-- SQL Server
-- SQL
-- Microsoft Excel
-- Power Query
-- Power Pivot
-- PivotTables & PivotCharts
-- Excel Slicers
-- Excel Dashboarding
+* How many customers have churned?
+* What is the overall churn rate?
+* Which contract types have higher churn?
+* How does churn vary by internet service and payment method?
+* Does customer tenure appear to be related to churn?
+* Which customers have higher retention risk?
+* How much revenue has been lost from churn?
+* Which high-value customers may need more attention?
 
 ---
 
-## 🔄 Project Workflow
+## 🛠️ Tools Used
+
+* SQL Server
+* SQL
+* Microsoft Excel
+* Power Query
+* Power Pivot
+* PivotTables & PivotCharts
+* Excel Slicers
+* Excel Dashboarding
+
+---
+
+## 📁 Project Workflow
 
 ### 1. Data Preparation & SQL Analysis
 
-Customer data was loaded into SQL Server and analyzed using SQL.
+I loaded the customer data into SQL Server and performed data validation and analysis using SQL.
 
-SQL views were created for:
+I created SQL views for different parts of the analysis, including:
 
-- Customer churn analysis
-- Churn by contract
-- Churn by tenure
-- Customer retention risk
-- High-value customers with elevated retention risk
+* Customer churn analysis
+* Churn by contract
+* Churn by tenure
+* Customer retention risk
+* High-value customers with elevated retention risk
+
+I also created separate SQL scripts for database creation, table creation, data loading, validation, basic analysis, segmentation, and advanced analysis.
 
 ### 2. Customer Risk Analysis
 
-A customer risk scoring approach was developed using:
+I created a simple risk scoring approach based on several customer characteristics:
 
-- Month-to-month contract
-- Short customer tenure
-- Higher monthly charges
-- Lack of online security
-- Lack of technical support
+* Month-to-month contract
+* Short customer tenure
+* Higher monthly charges
+* No online security
+* No technical support
 
-Customers were categorized into retention-risk groups.
+These factors were used to group customers into different retention-risk categories.
 
 ### 3. Excel Data Model
 
-SQL analysis results were connected to Excel using **Power Query** and incorporated into a **Power Pivot** data model.
+I connected the SQL Server views to Excel using **Power Query** and used **Power Pivot** to work with the data model.
 
-The model enables dynamic dashboard filtering through slicers while maintaining a reusable analytical structure.
+This allowed me to build an interactive dashboard where the charts and KPIs change based on slicer selections.
 
 ### 4. Interactive Dashboard
 
 The final dashboard includes:
 
-- **8 KPI cards**
-- **6 charts**
-- **5 slicers**
-- Dynamic filtering
-- Reset Filters functionality
-- Last Refreshed timestamp
-- Business insights
+* **8 KPI cards**
+* **6 charts**
+* **5 slicers**
+* Reset Filters button
+* Last Refreshed timestamp
+* Business insights
 
-The dashboard analyzes:
+The dashboard looks at:
 
-- Churn rate by contract
-- Churn rate by internet service
-- Churn rate by payment method
-- Monthly charge distribution
-- Customer retention risk
-- Revenue lost by contract
+* Churn rate by contract
+* Churn rate by internet service
+* Churn rate by payment method
+* Monthly charge distribution
+* Customer retention risk
+* Revenue lost by contract
 
 ---
 
 ## 📈 Key Findings
 
-Using the full customer dataset:
+Using the full dataset of **7,043 customers**, I found:
 
-- **7,043 customers** were analyzed.
-- Overall churn rate was **26.54%**.
-- Average customer tenure was approximately **32.37 months**.
-- Revenue lost from churn was approximately **$139,131**.
-- **84 high-value customers** were identified as having elevated retention risk.
-- The estimated value associated with these high-value at-risk customers was approximately **$454,250**.
-- Month-to-month customers had substantially higher churn than customers on longer-term contracts.
-- Electronic-check customers had the highest churn rate among the payment methods analyzed.
+* Overall churn rate: **26.54%**
+* Average customer tenure: **32.37 months**
+* Revenue lost from churn: approximately **$139,131**
+* High-value customers with elevated retention risk: **84**
+* Estimated value associated with these customers: approximately **$454,250**
+
+Some of the patterns I found were:
+
+* Month-to-month customers had much higher churn than customers with one-year or two-year contracts.
+* Electronic-check customers had the highest churn rate among the payment methods analyzed.
+* Customers with higher monthly charges and shorter tenure were more likely to fall into higher-risk groups.
 
 ---
 
 ## 💡 Business Insights
 
-### 1. Month-to-Month Customers
+A few areas stood out to me during the analysis:
 
-Month-to-month customers represent a particularly important churn-risk segment and may benefit from incentives to move to longer-term contracts.
+1. **Month-to-month customers** had considerably higher churn, which suggests that encouraging longer-term contracts could be worth investigating.
 
-### 2. High-Value At-Risk Customers
+2. **High-value customers with elevated retention risk** represent a potentially important group because losing these customers could have a larger financial impact.
 
-High-value customers with elevated retention risk should receive priority because losing these customers can have a larger financial impact.
+3. **Electronic-check customers** had the highest churn rate among the payment methods. This could be an area for further investigation.
 
-### 3. Electronic-Check Customers
+4. Customers with a combination of **short tenure, higher monthly charges, and limited support or security services** may need closer attention from a retention perspective.
 
-Electronic-check customers show significantly higher churn and may warrant further investigation into payment experience, customer behavior, or related service factors.
-
-### 4. Early-Tenure Customers
-
-Customers with combinations of short tenure, higher monthly charges, and limited support/security services may require proactive retention strategies.
+These findings are based on the patterns in this dataset and would need further analysis before making actual business decisions.
 
 ---
 
 ## 📊 Dashboard
 
 ![Customer Churn & Retention Risk Analysis Dashboard](customer-churn-dashboard.png)
-
 ---
 
 ## 🔍 Project Validation
 
-The Excel dashboard results were validated against the corresponding **SQL Server calculations** to ensure that KPIs and analytical results were accurate.
+I compared the main Excel dashboard results with the corresponding SQL Server calculations to make sure the numbers were consistent.
 
-Slicer interactions and dashboard behavior were also tested to ensure the interactive reporting experience worked correctly.
+I also tested the dashboard using different slicer selections to make sure the KPIs, charts, and business insights responded correctly.
 
 ---
 
-## 🚀 Skills Demonstrated
+## 📂 Project Files
 
-- SQL querying and analytical views
-- Data transformation
-- Relational data analysis
-- Customer segmentation
-- Risk scoring
-- KPI development
-- Excel data modeling
-- Power Query
-- Power Pivot
-- PivotTables and PivotCharts
-- Interactive dashboard design
-- Business intelligence reporting
-- Translating data into business recommendations
+* 📊 **[Dashboard Screenshot](customer-churn-dashboard.png)** — Preview of the completed dashboard
+* 📗 **[Excel Dashboard Workbook](Customer_Churn_Retention_Risk_Analysis.xlsm)** — Excel workbook containing the dashboard, Power Query, Power Pivot, slicers, and VBA reset functionality
+* 🗄️ **[SQL Analysis Scripts](02_SQL%20Scripts/)** — SQL scripts used for database setup, data preparation, validation, analysis, and view creation
+
+---
+
+## 🚀 Skills I Practiced
+
+Through this project, I worked with:
+
+* SQL querying
+* SQL views
+* Data validation
+* Customer segmentation
+* Risk scoring
+* Excel data modeling
+* Power Query
+* Power Pivot
+* PivotTables and PivotCharts
+* Excel slicers
+* Dashboard design
+* KPI development
+* Business insights
+* Connecting SQL Server with Excel
